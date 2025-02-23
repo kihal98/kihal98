@@ -1,4 +1,11 @@
-require("dotenv").config();
+const { Client, GatewayIntentBits } = require('discord.js');
+
+const client = new Client({ intents: [GatewayIntentBits.Guilds] });
+
+client.login(process.env.BOT_TOKEN); // ✅ Bot token Render ke environment se lega
+
+console.log(`Bot Guild ID: ${process.env.GUILD_ID}`);
+console.log(`Role ID: ${process.env.ROLE_ID}`);
 
 // Keep Alive System
 const keepAlive = require("./keep_alive.js");
